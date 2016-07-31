@@ -7,7 +7,7 @@ ENV XDEBUG_SHA1 a9bc9c6b9e8bc913fb1f7c6f6d19f6222d430414
 # Install Xdebug.
 RUN set -x && \
     curl -SL "http://www.xdebug.org/files/xdebug-$XDEBUG_VERSION.tgz" -o xdebug.tgz && \
-    echo $XDEBUG_SHA1 xdebug.tgz | sha1sum -c - && \
+    echo $XDEBUG_SHA1 xdebug.tgz | shasum -a 1 - && \
     mkdir -p /usr/src/xdebug && \
     tar -xf xdebug.tgz -C /usr/src/xdebug --strip-components=1 && \
     rm xdebug.* && \
